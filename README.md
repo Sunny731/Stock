@@ -1,0 +1,2 @@
+# Stock
+learnning angular4
