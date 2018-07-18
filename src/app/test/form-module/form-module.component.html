@@ -1,0 +1,134 @@
+<form style="margin:50px auto;" name="personForm">
+  <!--<div class="clearfix">-->
+    <!--<div class="form-group col-sm-6">-->
+      <!--<label for="userName" class="control-label col-sm-2">姓名：</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input [(ngModel)]="user.name" id="userName" name="userName" type="text" class="form-control">-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-sm-6">-->
+      <!--<label for="userAge" class="control-label col-sm-2">年龄：</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input [(ngModel)]="user.age" id="userAge" name="userAge" type="number" class="form-control">-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div class="clearfix">
+    <div class="form-group col-sm-6">
+      <label class="control-label col-sm-2">性别</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="user.sex" value="famale" type="radio" name="usrSex">男
+        <input [(ngModel)]="user.sex" value="male" type="radio" name="usrSex">女
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label class="control-label col-sm-2">兴趣爱好</label>
+      <div class="col-sm-6">
+        <input [(ngModel)]="user.habbit" type="checkbox" name="userHabbit">唱歌
+        <input [(ngModel)]="user.habbit" type="checkbox" name="userHabbit">跳舞
+        <input [(ngModel)]="user.habbit" type="checkbox" name="userHabbit">运动
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="form-group col-sm-6">
+      <label class="control-label col-sm-2">学校</label>
+      <div class="col-sm-10">
+        <select [(ngModel)]="user.college" name="userCollege" class="form-control">
+          <!--<option *ngFor="let college of collegeArr" [value]="college.id">{{college.name}}</option>-->
+          <option *ngFor="let college of collegeArr" [ngValue]="college">{{college.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="form-group col-sm-6">
+      <label class="control-label col-sm-2">人脉</label>
+      <div class="col-sm-10">
+        <select [(ngModel)]="user.net" multiple name="userNet[]"
+                class="form-control selectpicker show-tick form-control"
+                data-style="btn-success" multiple data-live-search="true">
+          <!--<option *ngFor="let college of netArr" [value]="college.id">{{college.name}}</option>-->
+          <option *ngFor="let college of netArr" [ngValue]="college">{{college.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="btn-box col-sm-offset-2">
+      <button (click)="submit()" class="btn btn-primary">确定</button>
+      <button class="btn btn-default">取消</button>
+    </div>
+  </div>
+  <div class="clearfix">
+    <ul>
+      <li class="form-group">
+        <label>姓名：</label>
+        <input #userName type="text" id="userName" name="userName" value="Echo">
+      </li>
+      <li class="form-group">
+        <label>电话：</label>
+        <input ref-userTel type="number" name="userTel" id="userTel" value="13348546852">
+      </li>
+      <li class="form-group show-group">
+        <p>{{userName.value}} - {{userTel.value}}</p>
+      </li>
+    </ul>
+    <ul>
+    </ul>
+  </div>
+</form>
+
+<form #userInfoForm="ngForm">
+  <ul>
+  <li class="clearfix">
+    <div class="form-group col-sm-6">
+      <label class="control-label col-sm-2">姓名：</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="userInfo.name1" type="text" name="name1">
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label class="control-label col-sm-2">年龄：</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="userInfo.age1" type="number" name="age1" id="">
+      </div>
+    </div>
+  </li>
+  </ul>
+  <div class="celarfix">
+    <div (click)="console(userInfoForm)" class="btn-box sm-col-offser-2">
+      <button class="btn btn-primary">确定</button>
+    </div>
+  </div>
+</form>
+
+<form id="personInfoForm">
+  <div class="form-group">
+    <label for="" class="control-label col-sm-2">业务员名字：</label>
+    <div class="col-sm-6">
+      <input #staffName="ngModel" [(ngModel)]="staffInfo.staffName" type="text" id="staffName" name="stafName" value="促销员1">
+    </div>
+    <p>{{staffName.valid}}</p>
+  </div>
+</form>
+
+<form id="studentForm">
+  <fieldset ngModelGroup="nameGroup" #nameGroup="ngModelGroup">
+    <label for="">姓：</label>
+    <input [(ngModel)]="studentInfo.firstName" name="firstName" type="text">
+    <label for="">名字</label>
+    <input [(ngModel)]="studentInfo.lastName" name="lastName" type="text">
+  </fieldset>
+  <fieldset ngModelGroup="addressGroup" #addressGroup="ngModelGroup">
+    <label for="">省：</label>
+    <input [(ngModel)]="studentInfo.province" name="province" type="text">
+    <label for="">市：</label>
+    <input [(ngModel)]="studentInfo.city" name="city" type="text">
+    <label for="">区：</label>
+    <input [(ngModel)]="studentInfo.area" name="area" type="text">
+  </fieldset>
+  <div class="brn-box">
+    <button (click)="print(nameGroup,addressGroup)" class="btn btn-primary">确定</button>
+  </div>
+</form>

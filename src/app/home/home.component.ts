@@ -6,11 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+public isTrue: boolean = false;
+public isBlank: string = '';
   constructor() { }
   ngOnInit() {
   }
-
+  public changeValue () {
+    this.isTrue = !this.isTrue;
+    this.isBlank = '我是有值的';
+  }
 }
 export class Product {
   name: string;

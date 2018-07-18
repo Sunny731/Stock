@@ -26,6 +26,13 @@
   <section class="col-sm-9">
     <div class="carousel">
       <h3>我是轮播占位</h3>
+      <div [ngClass]="{'bg-warning': isTrue, 'text-danger': isTrue}" class="text-center">我是测试html的ngcss</div>
+      <div [class.text-danger] = "isTrue" class="text-center text-primary">我是测试html的ngCss</div>
+      <div class="form-group col-sm-6">
+          <input type="text">
+      </div>
+      <div *ngIf="isBlank" class="text-center">{{isBlank}}</div>
+      <button (click)="changeValue()">点我改变</button>
     </div>
     <div class="product-wrap">
       <div class="col-sm-6 col-md-3">
