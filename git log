@@ -1,0 +1,265 @@
+warning: LF will be replaced by CRLF in src/app/test/form-module/form-module.component.ts.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/src/app/test/form-module/form-module.component.html b/src/app/test/form-module/form-module.component.html[m
+[1mindex 8634ce9..8344d71 100644[m
+[1m--- a/src/app/test/form-module/form-module.component.html[m
+[1m+++ b/src/app/test/form-module/form-module.component.html[m
+[36m@@ -1,134 +1,61 @@[m
+[31m-<form style="margin:50px auto;" name="personForm">[m
+[31m-  <!--<div class="clearfix">-->[m
+[31m-    <!--<div class="form-group col-sm-6">-->[m
+[31m-      <!--<label for="userName" class="control-label col-sm-2">姓名：</label>-->[m
+[31m-      <!--<div class="col-sm-10">-->[m
+[31m-        <!--<input [(ngModel)]="user.name" id="userName" name="userName" type="text" class="form-control">-->[m
+[31m-      <!--</div>-->[m
+[31m-    <!--</div>-->[m
+[31m-    <!--<div class="col-sm-6">-->[m
+[31m-      <!--<label for="userAge" class="control-label col-sm-2">年龄：</label>-->[m
+[31m-      <!--<div class="col-sm-10">-->[m
+[31m-        <!--<input [(ngModel)]="user.age" id="userAge" name="userAge" type="number" class="form-control">-->[m
+[31m-      <!--</div>-->[m
+[31m-    <!--</div>-->[m
+[31m-  <!--</div>-->[m
+[31m-  <div class="clearfix">[m
+[31m-    <div class="form-group col-sm-6">[m
+[31m-      <label class="control-label col-sm-2">性别</label>[m
+[31m-      <div class="col-sm-10">[m
+[31m-        <input [(ngModel)]="user.sex" value="famale" type="radio" name="usrSex">男[m
+[31m-        <input [(ngModel)]="user.sex" value="male" type="radio" name="usrSex">女[m
+[31m-      </div>[m
+[32m+[m[32m<form ngNoForm action="/regist" method="post">[m
+[32m+[m[32m  <div class="form-group clearfix">[m
+[32m+[m[32m    <label class="control-label col-sm-2">姓名：</label>[m
+[32m+[m[32m    <div class="col-sm-10">[m
+[32m+[m[32m      <input type="text" name="userName" class="form-control" value="Echo" placeholder="请输入姓名">[m
+     </div>[m
+[31m-    <div class="form-group col-sm-6">[m
+[31m-      <label class="control-label col-sm-2">兴趣爱好</label>[m
+[31m-      <div class="col-sm-6">[m
+[31m-        <input [(ngModel)]="user.habbit" type="checkbox" name="userHabbit">唱歌[m
+[31m-        <input [(ngModel)]="user.habbit" type="checkbox" name="userHabbit">跳舞[m
+[31m-        <input [(ngModel)]="user.habbit" type="checkbox" name="userHabbit">运动[m
+[31m-      </div>[m
+[32m+[m[32m  </div>[m
+[32m+[m[32m  <div class="form-group clearfix">[m
+[32m+[m[32m    <label class="control-label col-sm-2">年龄</label>[m
+[32m+[m[32m    <div class="col-sm-10">[m
+[32m+[m[32m      <input type="number" name="userAge" class="form-control" placeholder="请输入年龄">[m
+     </div>[m
+   </div>[m
+[31m-  <div class="clearfix">[m
+[31m-    <div class="form-group col-sm-6">[m
+[31m-      <label class="control-label col-sm-2">学校</label>[m
+[31m-      <div class="col-sm-10">[m
+[31m-        <select [(ngModel)]="user.college" name="userCollege" class="form-control">[m
+[31m-          <!--<option *ngFor="let college of collegeArr" [value]="college.id">{{college.name}}</option>-->[m
+[31m-          <option *ngFor="let college of collegeArr" [ngValue]="college">{{college.name}}</option>[m
+[31m-        </select>[m
+[32m+[m[32m  <div class="pass-box">[m
+[32m+[m[32m    <div class="form-group clearfix">[m
+[32m+[m[32m      <label class="control-label col-sm-2">密码：</label>[m
+[32m+[m[32m      <div class="col-sm-10 clearfix">[m
+[32m+[m[32m        <input type="password" name="userPassword" class="form-control" value="请输入密码">[m
+       </div>[m
+     </div>[m
+[31m-  </div>[m
+[31m-  <div class="clearfix">[m
+[31m-    <div class="form-group col-sm-6">[m
+[31m-      <label class="control-label col-sm-2">人脉</label>[m
+[32m+[m[32m    <div class="form-group clearfix">[m
+[32m+[m[32m      <label class="control-label col-sm-2">确认密码</label>[m
+       <div class="col-sm-10">[m
+[31m-        <select [(ngModel)]="user.net" multiple name="userNet[]"[m
+[31m-                class="form-control selectpicker show-tick form-control"[m
+[31m-                data-style="btn-success" multiple data-live-search="true">[m
+[31m-          <!--<option *ngFor="let college of netArr" [value]="college.id">{{college.name}}</option>-->[m
+[31m-          <option *ngFor="let college of netArr" [ngValue]="college">{{college.name}}</option>[m
+[31m-        </select>[m
+[32m+[m[32m        <input type="password" name="userPassSure" id="" class="form-control" value="请确认密码">[m
+       </div>[m
+     </div>[m
+[31m-  </div>[m
+[31m-  <div class="clearfix">[m
+[31m-    <div class="btn-box col-sm-offset-2">[m
+[31m-      <button (click)="submit()" class="btn btn-primary">确定</button>[m
+[31m-      <button class="btn btn-default">取消</button>[m
+[32m+[m[32m    <div class="form-group clearfix">[m
+[32m+[m[32m      <label class="control-label col-sm-2">是否博士</label>[m
+[32m+[m[32m      <div class="col-sm-10">[m
+[32m+[m[32m        <input type="radio" name="userTitle" value='yes'>是[m
+[32m+[m[32m        <input type="radio" name="userTitle" value='no'>否[m
+[32m+[m[32m      </div>[m
+     </div>[m
+[31m-  </div>[m
+[31m-  <div class="clearfix">[m
+[31m-    <ul>[m
+[31m-      <li class="form-group">[m
+[31m-        <label>姓名：</label>[m
+[31m-        <input #userName type="text" id="userName" name="userName" value="Echo">[m
+[31m-      </li>[m
+[31m-      <li class="form-group">[m
+[31m-        <label>电话：</label>[m
+[31m-        <input ref-userTel type="number" name="userTel" id="userTel" value="13348546852">[m
+[31m-      </li>[m
+[31m-      <li class="form-group show-group">[m
+[31m-        <p>{{userName.value}} - {{userTel.value}}</p>[m
+[31m-      </li>[m
+[31m-    </ul>[m
+[31m-    <ul>[m
+[31m-    </ul>[m
+[31m-  </div>[m
+[31m-</form>[m
+[31m-[m
+[31m-<form #userInfoForm="ngForm">[m
+[31m-  <ul>[m
+[31m-  <li class="clearfix">[m
+[31m-    <div class="form-group col-sm-6">[m
+[31m-      <label class="control-label col-sm-2">姓名：</label>[m
+[32m+[m[32m    <div class="form-group clearfix">[m
+[32m+[m[32m      <label class="control-label col-sm-2">兴趣爱好</label>[m
+       <div class="col-sm-10">[m
+[31m-        <input [(ngModel)]="userInfo.name1" type="text" name="name1">[m
+[32m+[m[32m        <input type="checkbox" name="userHabbit" value='football'>足球[m
+[32m+[m[32m        <input type="checkbox" name="userHabbit" value='basketball'>篮球[m
+[32m+[m[32m        <input type="checkbox" name="userHabbit" value='sign'>唱歌[m
+       </div>[m
+     </div>[m
+[31m-    <div class="form-group col-sm-6">[m
+[31m-      <label class="control-label col-sm-2">年龄：</label>[m
+[32m+[m[32m    <div class="form-group clearfix">[m
+[32m+[m[32m      <label class="control-label col-sm-2">家乡</label>[m
+       <div class="col-sm-10">[m
+[31m-        <input [(ngModel)]="userInfo.age1" type="number" name="age1" id="">[m
+[32m+[m[32m        <input type="radio" name="userCity">合肥[m
+       </div>[m
+     </div>[m
+[31m-  </li>[m
+[31m-  </ul>[m
+[31m-  <div class="celarfix">[m
+[31m-    <div (click)="console(userInfoForm)" class="btn-box sm-col-offser-2">[m
+[31m-      <button class="btn btn-primary">确定</button>[m
+[32m+[m[32m    <div class="form-group clearfix">[m
+[32m+[m[32m      <label class="control-label col-sm-2">上传文件</label>[m
+[32m+[m[32m      <div class="col-sm-10">[m
+[32m+[m[32m        <input type="file" name="userFile">选择文件[m
+[32m+[m[32m      </div>[m
+     </div>[m
+   </div>[m
+[31m-</form>[m
+[31m-[m
+[31m-<form id="personInfoForm">[m
+[31m-  <div class="form-group">[m
+[31m-    <label for="" class="control-label col-sm-2">业务员名字：</label>[m
+[31m-    <div class="col-sm-6">[m
+[31m-      <input #staffName="ngModel" [(ngModel)]="staffInfo.staffName" type="text" id="staffName" name="stafName" value="促销员1">[m
+[32m+[m[32m  <div class="form-group clearfix">[m
+[32m+[m[32m    <div class="button-box col-sm-offset-2">[m
+[32m+[m[32m      <button type="submit" class="btn btn-primary">确定</button>[m
+[32m+[m[32m      <button class="btn btn-default">取消</button>[m
+     </div>[m
+[31m-    <p>{{staffName.valid}}</p>[m
+[31m-  </div>[m
+[31m-</form>[m
+[31m-[m
+[31m-<form id="studentForm">[m
+[31m-  <fieldset ngModelGroup="nameGroup" #nameGroup="ngModelGroup">[m
+[31m-    <label for="">姓：</label>[m
+[31m-    <input [(ngModel)]="studentInfo.firstName" name="firstName" type="text">[m
+[31m-    <label for="">名字</label>[m
+[31m-    <input [(ngModel)]="studentInfo.lastName" name="lastName" type="text">[m
+[31m-  </fieldset>[m
+[31m-  <fieldset ngModelGroup="addressGroup" #addressGroup="ngModelGroup">[m
+[31m-    <label for="">省：</label>[m
+[31m-    <input [(ngModel)]="studentInfo.province" name="province" type="text">[m
+[31m-    <label for="">市：</label>[m
+[31m-    <input [(ngModel)]="studentInfo.city" name="city" type="text">[m
+[31m-    <label for="">区：</label>[m
+[31m-    <input [(ngModel)]="studentInfo.area" name="area" type="text">[m
+[31m-  </fieldset>[m
+[31m-  <div class="brn-box">[m
+[31m-    <button (click)="print(nameGroup,addressGroup)" class="btn btn-primary">确定</button>[m
+   </div>[m
+ </form>[m
+[1mdiff --git a/src/app/test/form-module/form-module.component.ts b/src/app/test/form-module/form-module.component.ts[m
+[1mindex 2fc5597..ee4fd49 100644[m
+[1m--- a/src/app/test/form-module/form-module.component.ts[m
+[1m+++ b/src/app/test/form-module/form-module.component.ts[m
+[36m@@ -6,78 +6,8 @@[m [mimport { Component, OnInit } from '@angular/core';[m
+   styleUrls: ['./form-module.component.css'][m
+ })[m
+ export class FormModuleComponent implements OnInit {[m
+[31m-  public collegeArr = [];[m
+[31m-  public netArr = [];[m
+[31m-  public user = {[m
+[31m-    name: '',[m
+[31m-    age: '',[m
+[31m-    sex: 'male',[m
+[31m-    habbit: '',[m
+[31m-    college: '',[m
+[31m-    net: ''[m
+[31m-  };[m
+[31m-  public userInfo = {[m
+[31m-    name1: '',[m
+[31m-    age1: ''[m
+[31m-  };[m
+[31m-  public staffInfo = {[m
+[31m-    staffName: ''[m
+[31m-  };[m
+[31m-  public studentInfo = {[m
+[31m-    firstName: '',[m
+[31m-    lastName: '',[m
+[31m-    province: '',[m
+[31m-    city: '',[m
+[31m-    area: ''[m
+[31m-  };[m
+[31m-[m
+   constructor() { }[m
+ [m
+   ngOnInit() {[m
+[31m-    this.collegeArr = [[m
+[31m-      {[m
+[31m-        'id': '001',[m
+[31m-        'name': '北京大学'[m
+[31m-      },[m
+[31m-      {[m
+[31m-        'id': '002',[m
+[31m-        'name': '上海大学'[m
+[31m-      },[m
+[31m-      {[m
+[31m-        'id': '002',[m
+[31m-        'name': '南京大学'[m
+[31m-      }[m
+[31m-    ];[m
+[31m-    this.netArr = [[m
+[31m-      {[m
+[31m-        'id': 'test1',[m
+[31m-        'name': '爸爸'[m
+[31m-      },[m
+[31m-      {[m
+[31m-        'id': 'test2',[m
+[31m-        'name': '妈妈'[m
+[31m-      },[m
+[31m-      {[m
+[31m-        'id': 'test3',[m
+[31m-        'name': '爷爷'[m
+[31m-      },[m
+[31m-      {[m
+[31m-        'id': 'test4',[m
+[31m-        'name': '奶奶'[m
+[31m-      }[m
+[31m-    ];[m
+[31m-  }[m
+[31m-[m
+[31m-  public submit () {[m
+[31m-    console.log(this.user);[m
+[31m-  }[m
+[31m-[m
+[31m-  public console(datas) {[m
+[31m-    console.log(datas);[m
+[31m-    console.log(datas.value);[m
+[31m-  }[m
+[31m-  public print(datas1, datas2) {[m
+[31m-    console.log(datas1.value);[m
+[31m-    console.log(datas2.value);[m
+   }[m
+ }[m
